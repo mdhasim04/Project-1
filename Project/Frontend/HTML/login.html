@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login / Register</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><a href="index.html">MyStore</a></div>
+    <nav>
+      <a href="cart.html" class="nav-btn">Cart <span id="cart-count">0</span></a>
+      <a href="login.html" class="nav-btn" id="auth-link">Login</a>
+    </nav>
+  </header>
+
+  <main class="container auth-page">
+    <div class="auth-card">
+      <h2>Login</h2>
+      <form id="login-form">
+        <label>Username<input name="username" required /></label>
+        <label>Password<input name="password" type="password" required /></label>
+        <div class="actions">
+          <button class="btn primary" type="submit">Login</button>
+        </div>
+      </form>
+      <p>Don't have an account? <a id="show-register" href="#">Register here</a></p>
+    </div>
+
+    <div class="auth-card hidden" id="register-card">
+      <h2>Register</h2>
+      <form id="register-form">
+        <label>Username<input name="username" required /></label>
+        <label>Password<input name="password" type="password" required /></label>
+        <label>Phone<input name="phone" /></label>
+        <div class="actions">
+          <button class="btn" type="submit">Create account</button>
+        </div>
+      </form>
+      <p>Already have account? <a id="show-login" href="#">Login</a></p>
+    </div>
+
+    <div id="auth-message" class="auth-message"></div>
+  </main>
+
+  <footer class="site-footer"><small>© MyStore — Simple E-Commerce Store</small></footer>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+  <script>App.initAuth();</script>
+</body>
+</html>

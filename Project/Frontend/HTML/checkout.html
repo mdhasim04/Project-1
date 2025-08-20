@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><a href="index.html">MyStore</a></div>
+    <nav>
+      <a href="cart.html" class="nav-btn">Cart <span id="cart-count">0</span></a>
+      <a href="login.html" class="nav-btn" id="auth-link">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Checkout</h2>
+    <div id="checkout-info"></div>
+
+    <form id="checkout-form" class="checkout-form">
+      <label>
+        Full name
+        <input name="name" required />
+      </label>
+      <label>
+        Address
+        <textarea name="address" required></textarea>
+      </label>
+      <label>
+        Phone
+        <input name="phone" required />
+      </label>
+      <div class="actions">
+        <button type="submit" class="btn primary">Place Order</button>
+        <a href="cart.html" class="btn">Back to Cart</a>
+      </div>
+    </form>
+
+    <div id="order-confirm" class="order-confirm hidden"></div>
+  </main>
+
+  <footer class="site-footer"><small>© MyStore — Simple E-Commerce Store</small></footer>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+  <script>App.initCheckout();</script>
+</body>
+</html>

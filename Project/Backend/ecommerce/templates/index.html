@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MyStore — Home</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand"><a href="{% url 'index' %}">MyStore</a></div>
+    <nav>
+      <a href="{% url 'cart' %}" class="nav-btn">Cart <span id="cart-count">0</span></a>
+      {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="nav-btn">Logout</a>
+      {% else %}
+        <a href="{% url 'login' %}" class="nav-btn" id="auth-link">Login</a>
+      {% endif %}
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Shop the Best Essentials</h1>
+      <p>Simple E-Commerce Store — Browse Products, Add to Cart, Checkout.</p>
+    </section>
+
+    <!-- Products Grid (Dynamic) -->
+    <section id="product-grid" class="grid">
+      <div class="card">
+        <img src="https://picsum.photos/300?1" alt="Smartphone">
+        <h3>Smartphone</h3>
+        <p>Latest Android smartphone</p>
+        <p style="font-weight:700;margin:6px 0">₹19,999</p>
+        <div class="actions">
+          <a class="btn" href="#">View</a>
+          <a class="btn primary" href="{% url 'add-to-cart' '1' %}">Add to Cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300?2" alt="Laptop">
+        <h3>Laptop</h3>
+        <p>Powerful laptop for work and study</p>
+        <p style="font-weight:700;margin:6px 0">₹49,999</p>
+        <div class="actions">
+          <a class="btn" href="#">View</a>
+          <a class="btn primary" href="{% url 'add-to-cart' '2' %}">Add to Cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300?3" alt="Smartwatch">
+        <h3>Smartwatch</h3>
+        <p>Track your fitness with style</p>
+        <p style="font-weight:700;margin:6px 0">₹9,999</p>
+        <div class="actions">
+          <a class="btn" href="#">View</a>
+          <a class="btn primary" href="{% url 'add-to-cart' '3' %}">Add to Cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300?4" alt="Headphones">
+        <h3>Headphones</h3>
+        <p>Wireless over-ear headphones</p>
+        <p style="font-weight:700;margin:6px 0">₹2,999</p>
+        <div class="actions">
+          <a class="btn" href="#">View</a>
+          <a class="btn primary" href="{% url 'add-to-cart' '4' %}">Add to Cart</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/300?5" alt="Backpack">
+        <h3>Backpack</h3>
+        <p>Durable leather backpack</p>
+        <p style="font-weight:700;margin:6px 0">₹1,499</p>
+        <div class="actions">
+          <a class="btn" href="#">View</a>
+          <a class="btn primary" href="{% url 'add-to-cart' '5' %}">Add to Cart</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <small>© 2025 MyStore — Simple E-Commerce Store</small>
+  </footer>
+</body>
+</html>
